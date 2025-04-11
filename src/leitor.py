@@ -43,11 +43,9 @@ def acharC(linha, n_vars, tipos_restricoes):
             coef = int(termo)
         vetor_c.append(coef)
 
-    # Completa com zeros caso faltem variáveis (x e y por exemplo)
     while len(vetor_c) < n_vars:
         vetor_c.append(0)
 
-    # Adiciona zeros para as variáveis de folga
     n_folgas = tipos_restricoes.count('<=') + tipos_restricoes.count('>=')
     vetor_c.extend([0] * n_folgas)
 
@@ -58,7 +56,7 @@ def processaRestricoes(linhas):
     matriz = []
     vetor_b = []
     tipos = []
-    n_vars = 0  # número de variáveis reais (x, y)
+    n_vars = 0
 
     for linha in linhas:
         if '<=' in linha:
@@ -105,7 +103,6 @@ def construirMatrizA(info):
     folga_index = 0
 
     for i, linha in enumerate(matriz):
-        # Completa com zeros caso alguma linha tenha menos variáveis
         while len(linha) < info['n_variaveis']:
             linha.append(0)
 
@@ -116,7 +113,6 @@ def construirMatrizA(info):
         elif tipos[i] == '>=':
             folgas[folga_index] = -1
             folga_index += 1
-        # '=' não adiciona folga
 
         linha_final = linha + folgas
         matriz_resultado.append(linha_final)
