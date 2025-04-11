@@ -1,7 +1,7 @@
 import re
 
-def lerTxt():
-    with open('src/assets/entrada.txt', 'r', encoding='utf-8') as entrada:
+def lerTxt(caminho):
+    with open(caminho, 'r', encoding='utf-8') as entrada:
         linhas = entrada.readlines()
 
     tipo_funcao = definitTipoFunc(linhas[0])
@@ -118,4 +118,4 @@ def construirMatrizA(info):
         matriz_resultado.append(linha_final)
 
     return matriz_resultado
-lerTxt()
+lerTxt('src/assets/entrada.txt')
