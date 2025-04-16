@@ -19,24 +19,3 @@ def determinante(matriz):
         det += cofator
     
     return det
-    
-    
-
-def ler_matriz():
-    n = int(input('Selecione a ordem de sua matriz quadrada: '))
-    
-    dados = []
-    for i in range(n):
-        linha = []
-        for j in range(n):
-            valor = float(input(f'Insira o número da Linha {i+1}, Coluna {j+1}: '))
-            linha.append(valor)
-        dados.append(linha)
-            
-    matriz = np.array(dados)    
-    return matriz 
-
-
-matriz_lida = ler_matriz()
-det = determinante(matriz_lida)
-print(f'Matriz lida: \n {matriz_lida} \n Determinante da matriz: {det}')

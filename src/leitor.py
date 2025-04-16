@@ -11,12 +11,14 @@ def lerTxt(caminho):
     matriz_a = construirMatrizA(restricoes)
     vetor_b = restricoes['vetor_b']
 
-    print("Tipo:", tipo_funcao)
-    print("Vetor C:", vetor_c)
-    print("Matriz A:")
-    for linha in matriz_a:
-        print(linha)
-    print("Vetor B:", vetor_b)
+    #print("Tipo:", tipo_funcao)
+    #print("Vetor C:", vetor_c)
+    #print("Matriz A:")
+    #for linha in matriz_a:
+    #    print(linha)
+    #print("Vetor B:", vetor_b)
+    
+    return tipo_funcao, matriz_a, vetor_b, vetor_c
 
 
 def definitTipoFunc(linha):
@@ -118,4 +120,3 @@ def construirMatrizA(info):
         matriz_resultado.append(linha_final)
 
     return matriz_resultado
-lerTxt('src/assets/entrada.txt')

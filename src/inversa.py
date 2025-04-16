@@ -1,19 +1,5 @@
 import numpy as np
 
-def ler_matriz():
-    n = int(input('Selecione a ordem de sua matriz quadrada: '))
-    
-    dados = []
-    for i in range(n):
-        linha = []
-        for j in range(n):
-            valor = float(input(f'Insira o número da Linha {i+1}, Coluna {j+1}: '))
-            linha.append(valor)
-        dados.append(linha)
-            
-    matriz = np.array(dados)    
-    return matriz 
-
 def determinante(matriz: np.ndarray) -> float:
     n = matriz.shape[0]
     
@@ -50,9 +36,3 @@ def inversa(matriz: np.ndarray) -> np.ndarray:
     inversa = (1 / det) * adjunta
     return inversa
 
-# Execução
-matriz_lida = ler_matriz()
-inver = inversa(matriz_lida)
-
-print(f'\nMatriz Lida:\n{matriz_lida}')
-print(f'\nMatriz Inversa:\n{inver}')
